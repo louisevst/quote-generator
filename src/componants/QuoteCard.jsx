@@ -42,29 +42,37 @@ const QuoteCard = () => {
   // Render the component
   if (!dataIsLoaded) {
     return (
-      <Card>
-        <div className="quote text-whitish p-5 flex justify-center items-center">
-          <h1>The quote is loading...</h1>
+      <main className="flex w-full justify-center">
+        <div className="flex flex-col  md:flex-row w-4/5  h-full md:w-1/3 justify-center">
+          {" "}
+          <Card>
+            <div className=" text-whitish">
+              <h1>The quote is loading...</h1>
+            </div>
+          </Card>
+          <Card2></Card2>
         </div>
-      </Card>
+      </main>
     );
   } else {
     return (
-      <>
-        <Card>
-          <Cite quote={quote} author={author} />
-          <Button onClick={clickHandler} />
-        </Card>
-        <Card2></Card2>
-        {previousQuotes.length > 1 && (
-          <div className="previous-quotes card text-whitish bg-blackGreen p-5 flex justify-center items-center">
-            <Cite
-              quote={previousQuotes[previousQuotes.length - 1].quote}
-              author={previousQuotes[previousQuotes.length - 1].author}
-            />
-          </div>
-        )}
-      </>
+      <main className="w-full h-full p-10 lg:p-20 lg:px-44">
+        <div className="flex flex-col md:flex-row h-full justify-center">
+          <Card>
+            <Cite quote={quote} author={author} />
+            <Button onClick={clickHandler} />
+          </Card>
+          <Card2></Card2>
+          {previousQuotes.length > 1 && (
+            <div className=" md:translate-y-0 min-h-[400px] lg:min-h-[600px] lg:max-w-[450px] lg:min-w-[400px] rounded-full translate-y-[-30px] md:translate-x-[-30px] bg-blackGreen flex justify-center items-center p-14 flex-1">
+              <Cite
+                quote={previousQuotes[previousQuotes.length - 1].quote}
+                author={previousQuotes[previousQuotes.length - 1].author}
+              />
+            </div>
+          )}
+        </div>
+      </main>
     );
   }
 };
