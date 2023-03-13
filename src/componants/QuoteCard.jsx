@@ -27,6 +27,10 @@ const QuoteCard = () => {
         setPreviousQuotes([...previousQuotes, { quote, author }]);
         setQuote(json[0].quote);
         setAuthor(json[0].author);
+        if (json[0].quote > 305) {
+          setQuote(json[1].quote);
+          setAuthor(json[1].author);
+        }
         setDataIsLoaded(true);
       });
   };
@@ -43,8 +47,7 @@ const QuoteCard = () => {
   if (!dataIsLoaded) {
     return (
       <main className="flex w-full justify-center">
-        <div className="flex flex-col  md:flex-row w-4/5  h-full md:w-1/3 justify-center">
-          {" "}
+        <div className="flex flex-col  lg:flex-row w-4/5  h-full md:w-1/3 justify-center">
           <Card>
             <div className=" text-whitish">
               <h1>The quote is loading...</h1>
@@ -57,14 +60,14 @@ const QuoteCard = () => {
   } else {
     return (
       <main className="w-full h-full p-10 lg:p-20 lg:px-44">
-        <div className="flex flex-col md:flex-row h-full justify-center">
+        <div className="flex flex-col lg:flex-row h-full justify-center items-center">
           <Card>
             <Cite quote={quote} author={author} />
             <Button onClick={clickHandler} />
           </Card>
           <Card2></Card2>
           {previousQuotes.length > 1 && (
-            <div className=" md:translate-y-0 min-h-[400px] lg:min-h-[600px] lg:max-w-[450px] lg:min-w-[400px] rounded-full translate-y-[-30px] md:translate-x-[-30px] bg-blackGreen flex justify-center items-center p-14 flex-1">
+            <div className=" lg:translate-y-0  h-[400px] w-[90%] rounded-full lg:h-[550px] lg:w-[300px] translate-y-[-30px] lg:translate-x-[-30px] bg-blackGreen flex justify-center items-center p-14 flex-1">
               <Cite
                 quote={previousQuotes[previousQuotes.length - 1].quote}
                 author={previousQuotes[previousQuotes.length - 1].author}
