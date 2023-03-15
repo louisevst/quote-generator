@@ -1,10 +1,14 @@
 import React from "react";
 
-function Card({ children }) {
+function Card({ children, className }) {
   return (
-    <div className=" md:translate-y-0 h-[400px] w-[90%] rounded-full lg:h-[550px]  lg:w-[300px] bg-blackGreen p-14 flex justify-around items-center flex-col flex-1">
+    <section
+      className={`${
+        className ?? ""
+      } sm:w-[300px] sm:h-[500px] lg:w-[350px] lg:h-[550px] w-[250px] h-[600px] rounded-full m-0 flex flex-col items-center justify-around py-14`}
+    >
       {children}
-    </div>
+    </section>
   );
 }
 export default Card;
