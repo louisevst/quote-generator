@@ -37,11 +37,11 @@ const QuoteCard = () => {
     <div
       className={`flex flex-col justify-center items-center h-full lg:h-screen lg:flex-row bg-blueGreen`}
     >
-      <Card className={`bg-blackGreen lg:ml-[15px]`}>
+      <Card className={`bg-blackGreen lg:ml-[15px] mt-8 lg:mt-0`}>
         <Quote author={author} quote={quote} fetchQuote={fetchQuote} />
       </Card>
       <Card
-        className={`translate-y-[-15px] lg:translate-x-[-15px] lg:translate-y-[0px] bg-pattern`}
+        className={`translate-y-[-50px] lg:translate-x-[-15px] lg:translate-y-[0px] bg-pattern`}
       >
         <div className="bg-blackGreen text-whitish p-8 px-4 text-center">
           <p className="font-display text-2xl">
@@ -52,7 +52,7 @@ const QuoteCard = () => {
       </Card>
       <Card
         className={
-          "translate-y-[-30px] lg:translate-x-[-30px] lg:translate-y-[0px] bg-blackGreen"
+          "translate-y-[-100px] lg:translate-x-[-30px] lg:translate-y-[0px] bg-blackGreen"
         }
       >
         <LastQuote
@@ -65,11 +65,11 @@ const QuoteCard = () => {
     <div
       className={`flex flex-col justify-center items-center h-full lg:h-screen lg:flex-row bg-blueGreen`}
     >
-      <Card className={`bg-blackGreen`}>
+      <Card className={`bg-blackGreen lg:ml-[15px] mt-8 lg:mt-0`}>
         <Quote author={author} quote={quote} fetchQuote={fetchQuote} />
       </Card>
       <Card
-        className={`translate-y-[-15px] lg:translate-x-[-15px] lg:translate-y-[0px] bg-pattern`}
+        className={`translate-y-[-50px] lg:translate-x-[-15px] lg:translate-y-[0px] bg-pattern`}
       >
         <div className="bg-blackGreen text-whitish p-8 px-4 text-center">
           <p className="font-display text-2xl">
