@@ -82,7 +82,7 @@ const QuoteCard = () => {
   ) : (
     <div
       role="status"
-      className={`flex flex-col justify-center items-center h-full lg:h-screen lg:flex-row bg-blueGreen`}
+      className={`flex flex-col justify-center items-center h-screen lg:flex-row bg-blueGreen`}
     >
       <svg
         aria-hidden="true"
